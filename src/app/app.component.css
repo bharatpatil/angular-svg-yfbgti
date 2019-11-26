@@ -1,0 +1,19 @@
+svg {
+  border: 1px solid red;
+}
+
+.ap-icon {
+  width: 25px;
+  height: 25px;
+}
+
+ul.aps {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.aps li {
+  border: 1px solid red;
+  height: 20px;
+  margin: 5px;
+}

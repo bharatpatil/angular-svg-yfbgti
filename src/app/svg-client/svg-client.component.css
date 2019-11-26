@@ -1,0 +1,11 @@
+.client-svg-shadown {
+    fill: rgba(136, 233, 232, 0.3);
+}
+
+.client-svg {
+    fill: #1EAFAD;
+}
+
+.client-svg-group {
+  transition: transform 0.5s;
+}

@@ -1,0 +1,34 @@
+Test
+<button (click)="addClient()">Add Client</button>
+<button (click)="addAP()">Add AP</button>
+<br>
+<ul class="aps">
+  <li>AP1</li>
+  <li>AP2</li>
+  <li>AP3</li>
+</ul>
+<br>
+<svg #stageRef [attr.width]="dimension.width" [attr.height]="dimension.height">
+  <defs>
+    <filter id="clientEffect" x="-10%" y="-10%">
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="1.7"
+      ></feGaussianBlur>
+    </filter>
+  </defs>
+<!-- [zoomableOf]="stageRef" -->
+	<g #containerEl transform="translate(0,0)">
+
+		<g class="plan-image">
+			<image xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg"></image>
+		</g>
+		<g class="clients devices">
+			<g app-svg-client [x]="c.x" [y]="c.y" *ngFor="let c of clients; trackBy: index; let i = index"
+      deviceId="{{i}}" [floor]="stageRef" (clientClick)="onClientClick($event)"></g>
+		</g>
+		<g class="aps devices">
+			<g app-svg-ap [x]="a.x" [y]="a.y" *ngFor="let a of aps; trackBy: index; let i = index" deviceId="{{i}}" [floor]="stageRef" (apClick)="onApClient($event)"></g>
+		</g>
+	</g>
+</svg>
